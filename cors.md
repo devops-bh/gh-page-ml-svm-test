@@ -1,0 +1,11 @@
+https://www.google.com/search?client=opera&q=ptogressive+web+apps+cross+origin&sourceid=opera&ie=UTF-8&oe=UTF-8#ip=1
+https://web.dev/articles/multi-origin-pwas
+https://medium.com/@drenzulli/building-progressive-web-apps-on-multi-subdomain-sites-fbd3384d0706
+https://www.linkedin.com/advice/1/how-do-you-handle-cross-origin-requests-web
+https://stackoverflow.com/questions/47588009/how-to-avoid-cors-issue-in-pwa
+https://news.ycombinator.com/item?id=22067945
+https://whatwebcando.today/articles/opaque-responses-service-worker/
+https://www.outsystems.com/forums/discussion/86597/pwa-app-resources-are-blocked-due-to-cors/
+https://www.oreilly.com/library/view/building-progressive-web/9781491961643/app03.html
+https://frontendmasters.com/courses/progressive-web-apps/fetch-cors/
+https://developer.mozilla.org/en-US/docs/Web/Manifest

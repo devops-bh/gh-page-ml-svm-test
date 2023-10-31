@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>replit</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div class="training-images">
+		<img data-label="dog"
+			src="dog.1.jpg"
+			width="50" height="50" />
+		<img data-label="dog"
+			src="dog.2.jpg"
+			width="50" height="50" />
+		<img data-label="dog"
+			src="dog.3.jpg"
+			width="50" height="50" />
+		<img data-label="dog"
+			src="dog.4.jpg"
+			width="50" height="50" />
+		<img data-label="dog"
+			src="dog.5.jpg"
+			width="50" height="50" />
+
+		<!-- cat -->
+		<img data-label="cat"
+			src="cat.1.jpg"
+			width="50" height="50" />
+		<img data-label="cat"
+			src="cat.2.jpg"
+			width="50" height="50" />
+		<img data-label="cat"
+			src="cat.3.jpg"
+			width="50" height="50" />
+		<img data-label="cat"
+			src="cat.4.jpg"
+			width="50" height="50" />
+		<img data-label="cat"
+			src="cat.5.jpg"
+			width="50" height="50" />
+	</div>
+
+	<!-- I don't think I need a width/height, I'm worried if the canvas height/width 
+	overwrites the the HTML image width & height and/or the default width/height provided by Pexel
+	-->
+	<div>
+	<strong>Canvas</strong>
+		<div>
+	<canvas id="image-pixel-data" width="50" height="50" style="background-color:blue;" />
+	</div>
+	<!--
+		I briefly considered using a fresh canvas via the createElement API 
+		but I'm not sure if I need that yet 
+		-->	
+	</div>
+	<script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
+	<!--- bit weird jsDelivr claims this is a CDN but the library seems to imply otherwise 
+	e.g. the code is erroring due to the lack of the require statement, 
+	and I am not in the mood to bundle the package myself :| 
+	I briefly tried treating it as a module but that didn't work 
+	^ maybe its cause I stupidy typed "model" rather than module: 
+	<script type="model" src="script.js"></script> :| 
+	<script type="module" src="https://cdn.jsdelivr.net/npm/ml-svm@2.1.2/src/svm.min.js"></script>
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+	
+	see: https://github.com/mljs/libsvm#load-in-the-browser
+	--> 
+	<!-- 
+	Ok, so a lot of the libraries I've looked at all use require, despite claiming to be 
+	usable within the browser, I believe I should use a NodeJS bundler e.g. Webpack/Babel (maybe Parcel / Vite) to bundle the SVM library with the client side code (similar to how Single Page Apps work), then I'd put that bundled file & an index.html file onto say Gtihub Pages 
+	https://www.npmjs.com/package/machine_learning
+	https://www.digitalocean.com/community/questions/uncaught-referenceerror-require-is-not-defined
+
+	I briefly considered writing a script to change the require statements to import statements, 
+	but I cannot predict how long this will take, and I think the native browser "import" keyword may require the file to be running on a webserver (where CORS configuration is unlikely to get in the way), and some browsers may not support the ES6 import keyword 
+	
+	
+	Otherwise, I'd likely need to code (or at least copy code from a tutorial etc) my own support vector machine using pure client side JS (ideally ES5) 
+
+	I mean... I guess assuming that require is the only part of NodeJS being used, then 
+	hypothetically I can just manually copy & paste the code for each file into the same file 
+	and get rid of the require statement, but this is a tedious task and could lead to issues such as clashing variables 
+
+	I don't think requirejs is what I was looking for - https://www.youtube.com/playlist?list=PLYxzS__5yYQmDD-0A0Jvy27lUnrGIsq9o
+	
+	I
+	--> 
+	<script src="opencv.js" type="text/javascript"></script>
+	<script src="script.min.js"></script>
+	<!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+	<script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+</body>
+
+</html>
