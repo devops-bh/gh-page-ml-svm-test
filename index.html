@@ -9,54 +9,83 @@
 </head>
 
 <body>
-	<div class="training-images">
-		<img data-label="dog"
+	<div>
+		<h2>These are the images the SVM uses to train</h2>
+		<p>some (like half & half iirc?) of the images are used for validation too</p>
+		<!-- Ideally the model will be pretrained so I will likely rid of the HTML 
+		also some of the images are validation images 
+		-->
+		<div class="training-images">
+			<img data-label="dog"
 			src="dog.1.jpg"
 			width="50" height="50" />
-		<img data-label="dog"
+			<img data-label="dog"
 			src="dog.2.jpg"
 			width="50" height="50" />
-		<img data-label="dog"
+			<img data-label="dog"
 			src="dog.3.jpg"
 			width="50" height="50" />
-		<img data-label="dog"
+			<img data-label="dog"
 			src="dog.4.jpg"
 			width="50" height="50" />
-		<img data-label="dog"
+			<img data-label="dog"
 			src="dog.5.jpg"
 			width="50" height="50" />
-
-		<!-- cat -->
-		<img data-label="cat"
+			
+			<!-- cat -->
+			<img data-label="cat"
 			src="cat.1.jpg"
 			width="50" height="50" />
-		<img data-label="cat"
+			<img data-label="cat"
 			src="cat.2.jpg"
 			width="50" height="50" />
-		<img data-label="cat"
+			<img data-label="cat"
 			src="cat.3.jpg"
 			width="50" height="50" />
-		<img data-label="cat"
+			<img data-label="cat"
 			src="cat.4.jpg"
 			width="50" height="50" />
-		<img data-label="cat"
+			<img data-label="cat"
 			src="cat.5.jpg"
 			width="50" height="50" />
+		</div>
+	</div>
+	
+	<!-- 
+	<label for="locust">Choose a picture picture of a desert locust:</label>
+	<input type="file" id="upload" name="upload" accept="image/png, image/jpeg" /><br /> 
+	--> 
+	<input id="fileToUpload" name="fileToUpload" type="file" accept="image/png, image/jpeg" />
+	<img width="50" height="50" id="preview" />
+	<button id="predict">Predict</button>
+	<img id="uploaded-image" /> 
+	<div> 
+		<h2>Prediction for your image</h2>
+		<div id="prediction-for-user-image"><!-- added via js --></div>
 	</div>
 
-	<!-- I don't think I need a width/height, I'm worried if the canvas height/width 
-	overwrites the the HTML image width & height and/or the default width/height provided by Pexel
+
+			<!-- I don't think I need a width/height, I'm worried if the canvas height/width 
+			overwrites the the HTML image width & height and/or the default width/height provided by Pexel
 	-->
-	<div>
-	<strong>Canvas</strong>
+	<div style="display:none;">
+		<strong>Canvas</strong>
 		<div>
-	<canvas id="image-pixel-data" width="50" height="50" style="background-color:blue;" />
-	</div>
+		<canvas id="image-pixel-data" width="50" height="50" style="background-color:blue;" />
+		</div>
 	<!--
-		I briefly considered using a fresh canvas via the createElement API 
+		I briefly considered using a fresh canvas via JS's createElement API 
 		but I'm not sure if I need that yet 
 		-->	
 	</div>
+	<div>
+		<strong id="validation-strong-el">Validation Image</strong>
+		<div>
+			<canvas id="validation-image" width="50" height="50" style="background-color:blue;" />
+		</div>
+		<b id="validation"><!-- added via JS--> </b>
+	</div>
+
 	<script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
 	<!--- bit weird jsDelivr claims this is a CDN but the library seems to imply otherwise 
 	e.g. the code is erroring due to the lack of the require statement, 
